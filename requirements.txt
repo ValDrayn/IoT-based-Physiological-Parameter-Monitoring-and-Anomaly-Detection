@@ -1,0 +1,7 @@
+gradio
+paho-mqtt
+plotly
+numpy
+pandas
+scikit-learn
+joblib
