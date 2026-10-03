@@ -1507,38 +1507,28 @@ with gr.Blocks(
     # Layout utama:
     # - Kolom kiri  : status dan data sensor.
     # - Kolom kanan : grafik fisiologis.
-    with gr.Row(
-        elem_classes=["dash-row"]
-    ):
+    with gr.Row(elem_classes=["dash-row"]):
 
-        #  LEFT COLUMN 
+        # Panel kiri: status dan nilai sensor
         with gr.Column(
-            scale=0,
+            scale=1,
             min_width=320,
             elem_classes=["left-col"]
         ):
+            dashboard_left = gr.HTML(value="")
 
-            dashboard_left = gr.HTML(
-                value=""
-            )
-
-
-        #  RIGHT COLUMN 
+        # Panel kanan: grafik monitoring
         with gr.Column(
             scale=3,
             elem_classes=["right-col"]
         ):
-
-            # Grafik Heart Rate.
             graph_hr = gr.Plot(
                 label="",
                 elem_id="hr-plot",
                 container=False
             )
 
-            # Grafik SpO2 dan suhu.
             with gr.Row():
-
                 graph_spo2 = gr.Plot(
                     label="",
                     elem_id="spo2-plot",
